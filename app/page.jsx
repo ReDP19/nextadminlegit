@@ -1,7 +1,7 @@
 // TODO
 const Homepage = () => {
   return (
-    <div>Homepage</div>
+    <div>Homepage when were back in niggaro</div>
   )
 }
 
