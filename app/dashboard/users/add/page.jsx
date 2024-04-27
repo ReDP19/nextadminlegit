@@ -29,10 +29,10 @@ const AddUserPage = () => {
           <option value={false}>No</option>
         </select>
         <textarea
-          name="address"
+          name="description"
           id="address"
           rows="16"
-          placeholder="Address"
+          placeholder="description"
         ></textarea>
         <button type="submit">Submit</button>
       </form>

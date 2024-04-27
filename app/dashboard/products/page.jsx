@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/app/ui/dashboard/products/products.module.css";
@@ -9,7 +10,7 @@ import { deleteProduct } from "@/app/lib/actions";
 const ProductsPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
   const page = searchParams?.page || 1;
-  const { count, products } = await fetchProducts(q, page);
+  const { count, products } = await fetchProducts (q, page);
 
   return (
     <div className={styles.container}>
@@ -22,11 +23,11 @@ const ProductsPage = async ({ searchParams }) => {
       <table className={styles.table}>
         <thead>
           <tr>
-            <td>Title</td>
+            <td>Apparatus</td>
             <td>Description</td>
-            <td>Price</td>
+            <td>Estimated Price</td>
             <td>Created At</td>
-            <td>Stock</td>
+            <td>Quantity</td>
             <td>Action</td>
           </tr>
         </thead>
@@ -42,13 +43,13 @@ const ProductsPage = async ({ searchParams }) => {
                     height={40}
                     className={styles.productImage}
                   />
-                  {product.title}
+                  {product.apparatus}
                 </div>
               </td>
               <td>{product.desc}</td>
-              <td>${product.price}</td>
+              <td>₱{product.price}</td>
               <td>{product.createdAt?.toString().slice(4, 16)}</td>
-              <td>{product.stock}</td>
+              <td>{product.quantity}</td>
               <td>
                 <div className={styles.buttons}>
                   <Link href={`/dashboard/products/${product.id}`}>

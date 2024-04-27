@@ -4,7 +4,7 @@ import { connectToDB } from "./utils";
 export const fetchUsers = async (q, page) => {
   const regex = new RegExp(q, "i");
 
-  const ITEM_PER_PAGE = 2;
+  const ITEM_PER_PAGE = 10;
 
   try {
     connectToDB();
@@ -35,12 +35,12 @@ export const fetchProducts = async (q, page) => {
   console.log(q);
   const regex = new RegExp(q, "i");
 
-  const ITEM_PER_PAGE = 2;
+  const ITEM_PER_PAGE = 10;
 
   try {
     connectToDB();
-    const count = await Product.find({ title: { $regex: regex } }).count();
-    const products = await Product.find({ title: { $regex: regex } })
+    const count = await Product.find({ apparatus: { $regex: regex } }).count();
+    const products = await Product.find({ apparatus: { $regex: regex } })
       .limit(ITEM_PER_PAGE)
       .skip(ITEM_PER_PAGE * (page - 1));
     return { count, products };
@@ -66,20 +66,20 @@ export const fetchProduct = async (id) => {
 export const cards = [
   {
     id: 1,
-    title: "Total niggers",
-    number: 10.928,
+    title: "Total Reports",
+    number: 14,
     change: 12,
   },
   {
     id: 2,
-    title: "Stock",
-    number: 8.236,
-    change: -2,
+    title: "Unresolved Reports",
+    number: 8,
+    change: 2,
   },
   {
     id: 3,
-    title: "Revenue",
-    number: 6.642,
-    change: 18,
+    title: "Resolved Reports",
+    number: 6,
+    change: -20,
   },
 ];

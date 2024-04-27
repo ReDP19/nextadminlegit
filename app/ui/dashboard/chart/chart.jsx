@@ -1,4 +1,4 @@
-"use client"
+ "use client"
 
 import styles from './chart.module.css'
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
@@ -67,6 +67,6 @@ const Chart = () => {
       </ResponsiveContainer>
     </div>
   )
-}
+} 
 
-export default Chart
+export default Chart 

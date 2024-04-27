@@ -70,24 +70,25 @@ export const updateUser = async (formData) => {
 };
 
 export const addProduct = async (formData) => {
-  const { title, desc, price, stock, color, size } =
+  const { apparatus, cat, desc, price, quantity, date, size } =
     Object.fromEntries(formData);
-
+console.log("GAGO",formData)
   try {
     connectToDB();
 
     const newProduct = new Product({
-      title,
+      apparatus,
+      cat,
       desc,
       price,
-      stock,
-      color,
+      quantity,
+      date,
       size,
     });
-
-    await newProduct.save();
+const saveProduct = await newProduct.save()
+    console.log(saveProduct)
   } catch (err) {
-    console.log(err);
+    console.log(JSON.stringify(err));
     throw new Error("Failed to create product!");
   }
 
@@ -96,18 +97,18 @@ export const addProduct = async (formData) => {
 };
 
 export const updateProduct = async (formData) => {
-  const { id, title, desc, price, stock, color, size } =
+  const { id, apparatus, desc, price, quantity, date, size } =
     Object.fromEntries(formData);
 
   try {
     connectToDB();
 
     const updateFields = {
-      title,
+      apparatus,
       desc,
       price,
-      stock,
-      color,
+      quantity,
+      date,
       size,
     };
 

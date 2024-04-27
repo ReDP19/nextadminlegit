@@ -4,15 +4,18 @@ import styles from "./sidebar.module.css";
 import {
   MdDashboard,
   MdSupervisedUserCircle,
-  MdShoppingBag,
-  MdAttachMoney,
-  MdWork,
-  MdAnalytics,
-  MdPeople,
-  MdOutlineSettings,
-  MdHelpCenter,
+  MdOutlineScience,
   MdLogout,
 } from "react-icons/md";
+import {
+  GiMaterialsScience,
+  GiWeight
+} from "react-icons/gi";
+import { 
+  FaDna, 
+  FaClipboardList,
+} from "react-icons/fa";
+
 import { auth, signOut } from "@/app/auth";
 
 const menuItems = [
@@ -32,11 +35,36 @@ const menuItems = [
       {
         title: "Products",
         path: "/dashboard/products",
-        icon: <MdShoppingBag />,
+        icon: <MdOutlineScience />,
       },
+      {
+        title: "Borrowers",
+        path: "/dashboard/borrowers",
+        icon: <FaClipboardList />
+      }
       
     ],
   },
+  {
+    title: "Laboratories",
+    list: [
+      {
+        title: "Physics",
+        path: "/dashboard/physics",
+        icon: <GiWeight />
+      },
+      {
+        title: "Chemistry",
+        path: "/dashboard/chemistry",
+        icon: <GiMaterialsScience />
+      },
+      {
+        title: "Biology",
+        path: "/dashboard/biology",
+        icon: <FaDna />
+      }
+    ]
+  }
  
   
   

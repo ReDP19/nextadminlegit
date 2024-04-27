@@ -18,17 +18,17 @@ const SingleProductPage = async ({ params }) => {
       <div className={styles.formContainer}>
         <form action={updateProduct} className={styles.form}>
           <input type="hidden" name="id" value={product.id} />
-          <label>Title</label>
-          <input type="text" name="title" placeholder={product.title} />
-          <label>Price</label>
+          <label>Apparatus</label>
+          <input type="text" name="apparatus" placeholder={product.apparatus} />
+          <label>Estimated Price</label>
           <input type="number" name="price" placeholder={product.price} />
-          <label>Stock</label>
-          <input type="number" name="stock" placeholder={product.stock} />
-          <label>Color</label>
+          <label>Quantity</label>
+          <input type="number" name="quantity" placeholder={product.quantity} />
+          <label>Date of Replacement</label>
           <input
             type="text"
-            name="color"
-            placeholder={product.color || "color"}
+            name="Date of Replacement"
+            placeholder={product.Date || "Date"}
           />
           <label>Size</label>
           <textarea
@@ -38,8 +38,9 @@ const SingleProductPage = async ({ params }) => {
           />
           <label>Cat</label>
           <select name="cat" id="cat">
-            <option value="kitchen">Kitchen</option>
-            <option value="computers">Computers</option>
+            <option value="Physics">Physics</option>
+            <option value="Chemistry">Chemistry</option>
+            <option value="Biology">Biology</option>
           </select>
           <label>Description</label>
           <textarea

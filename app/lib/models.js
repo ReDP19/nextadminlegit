@@ -41,10 +41,14 @@ const userSchema = new mongoose.Schema(
 
 const productSchema = new mongoose.Schema(
   {
-    title: {
+    apparatus: {
       type: String,
       required: true,
       unique: true,
+    },
+    cat: {
+      type: String,
+      required: true,
     },
     desc: {
       type: String,
@@ -55,15 +59,12 @@ const productSchema = new mongoose.Schema(
       required: true,
       min: 0,
     },
-    stock: {
+    quantity: {
       type: Number,
       required: true,
       min: 0,
     },
-    img: {
-      type: String,
-    },
-    color: {
+    date: {
       type: String,
     },
     size: {
